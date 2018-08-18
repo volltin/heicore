@@ -201,6 +201,135 @@ body{
 	position:relative;
 	bottom:-2px;
 }
+
+/********** Reg *************/
+#regContainer {
+	position:relative;
+}
+#regContainer a span{
+	display:block;
+}
+/* Login Button */
+#regButton {
+	display:inline-block;
+	position:relative;
+	z-index:30;
+	cursor:pointer;
+}
+/* Login Box */
+#regBox {
+	position:absolute;
+	top:50px;
+	right:-25px;
+	display:none;
+	z-index:9999;
+	width:330px;
+	margin-top: 0px;
+	background:#f1f1f1;
+	border-bottom:4px solid #e0e0e0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+}
+#regForm:after {
+	content: '';
+	position: absolute;
+	right: 40px;
+	top: -10px;
+	border-left:10px solid rgba(0, 0, 0, 0);
+	border-right:10px solid rgba(0, 0, 0, 0);
+	border-bottom:10px solid #576f6f;
+}
+#regForm{
+	padding:8%;
+}
+/* Login Form */
+.reg-form h3{
+	font-size:15px;
+	color:#FFF;
+	font-weight:bold;
+	padding:15px;
+	text-align:center;
+	background:#576f6f;
+	border-radius:5px 5px 0px 0px;
+	-webkit-border-radius:5px 5px 0px 0px;
+	-moz-border-radius:5px 5px 0px 0px;
+	-o-border-radius:5px 5px 0px 0px;
+}
+.reg-form span:first-child{
+	margin-top:0;
+}
+.reg-form span{
+	background:#FFF;
+	margin:15px 0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	display:block;
+	outline:none;
+}
+.reg-form span i{
+	background:#576f6f;
+	padding:12px 8px 13px;
+	border-radius:5px 0px 0px 5px;
+	-webkit-border-radius:5px 0px 0px 5px;
+	-moz-border-radius:5px 0px 0px 5px;
+	-o-border-radius:5px 0px 0px 5px;
+}
+.reg-form span i img{
+	vertical-align:middle;
+}
+.reg-form input[type="text"],.reg-form input[type="password"]{
+	padding:14px 10px;
+	color:#c8d8d7;
+	font-size:14px;
+	font-weight:700;
+	background:none;
+	outline:none;
+	border:none;
+	margin:0px auto;
+	width:80%;
+	-webkit-apperance:none;
+	font-family:'Open Sans', sans-serif;
+	margin-left:5px;
+}
+.reg-form input[type="password"]{
+	letter-spacing:2px;
+}
+.reg-form input[type="submit"] {
+	display:block;
+	font-size:18px;
+	font-weight:600;
+	color:#FFF;
+	text-transform:uppercase;
+	padding:12px 0px;
+	width:100%;
+	background:#f28858;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	border:none;
+	border-bottom:4px solid #b56642;
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-apperance:none;
+	font-family:'Open Sans', sans-serif;
+	outline:none;
+}
+.reg-form input[type="submit"]:hover{
+	background:#EC7945;
+	border-bottom:4px solid #D1612E;
+}
+.reg-form input[type="submit"]:active{
+	position:relative;
+	bottom:-2px;
+}
+
 .logo img{
 	display:block;
 }

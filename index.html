@@ -86,6 +86,36 @@
                 }
             });
         });
+
+        // Login Form
+        $(function () {
+            var button = $('#regButton');
+            var box = $('#regBox');
+            var form = $('#regForm');
+            button.removeAttr('href');
+            button.mouseup(function (login) {
+                box.toggle();
+                button.toggleClass('active');
+            });
+            form.mouseup(function () {
+                return false;
+            });
+            $(this).mouseup(function (login) {
+                if (!($(login.target).parent('#regButton').length > 0)) {
+                    button.removeClass('active');
+                    box.hide();
+                }
+            });
+            form.submit(function () {
+                if (!isLatestHEICORE()) {
+                    alert("为保证安全，请使用最新版黑曜石浏览器注册。");
+                    event.preventDefault();
+                } else {
+                    alert("注册成功！");
+                    //注册用户的借口还没写好，先糊弄一下吧
+                }
+            });
+        });
     </script>
 </head>
 <body>
@@ -98,7 +128,30 @@
             </div>
             <div class="header-top-right">
                 <ul>
-                    <li><a href"#"><i class="fa fa-comments"></i>成为投资者</a></li>
+                    <li><a href="#"><i class="fa fa-comments"></i>成为投资者</a></li>
+                    <li class="reg">
+                        <div id="regContainer">
+                            <a href="#" id="regButton"><span><i class="fa fa-lock"></i>注册</span></a>
+                            <div id="regBox" class="reg-form">
+                                <h3>注册</h3>
+                                <form id="regForm">
+						                                <span>
+											 	    		<i><img src="images/user.png" alt=""/></i>
+											 	    		 <input type="text" value="username@heicore.com"
+                                                                    onfocus="this.value = '';"
+                                                                    onblur="if (this.value == '') {this.value = 'username@heicore.com';}">
+											 	    	</span>
+                                    <span>
+												 	     <i><img src="images/lock.png" alt=""/></i>
+											 	         <input type="password" value="........."
+                                                                onfocus="this.value = '';"
+                                                                onblur="if (this.value == '') {this.value = '.........';}">
+												 	    </span>
+                                    <input type="submit" value="注册" id="regSubmit">
+                                </form>
+                            </div>
+                        </div>
+                    </li>
                     <li class="login">
                         <div id="loginContainer">
                             <a href="#" id="loginButton"><span><i class="fa fa-lock"></i>登录</span></a>
@@ -122,7 +175,6 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#"><i class="fa fa-sign-in"></i>注册</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
