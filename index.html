@@ -20,14 +20,7 @@
     <script src="js/bootstrap.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/owl.carousel.js" type="text/javascript"></script>
-    <script>
-        function isLatestHEICORE() {
-            var ua = navigator.userAgent;
-            var HEICORE_UA = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) HEICORE/49.1.2623.213 Safari/537.36";
-            return ua === HEICORE_UA;
-        }
-
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
 
             var owl = $("#owl-demo");
 
@@ -51,15 +44,20 @@
             });
 
             $("#download_link").click(function() {
-                if (!isLatestHEICORE()) {
-                    alert("请使用最新版黑曜石浏览器下载！");
+                if (!window.loggedIn) {
+                    alert("仅差一步！请于登录后下载黑曜石浏览器。");
                 } else {
-                    window.location.href="HEICORE_installer_latest.exe";
+                    window.location.href="HEICORE.49.1.2623.213_installer_latest.exe";
                 }
             });
         });
     </script>
     <script type="text/javascript">
+        function isLatestHEICORE() {
+            var ua = navigator.userAgent;
+            var HEICORE_UA = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) HEICORE/49.1.2623.213 Safari/537.36";
+            return ua === HEICORE_UA;
+        }
         // Login Form
         $(function () {
             var button = $('#loginButton');
@@ -77,6 +75,14 @@
                 if (!($(login.target).parent('#loginButton').length > 0)) {
                     button.removeClass('active');
                     box.hide();
+                }
+            });
+            form.submit(function () {
+                if (!isLatestHEICORE()) {
+                    alert("为保证安全，请使用最新版黑曜石浏览器登录。");
+                    event.preventDefault();
+                } else {
+                    window.loggedIn = true;
                 }
             });
         });
@@ -111,7 +117,7 @@
                                                                 onfocus="this.value = '';"
                                                                 onblur="if (this.value == '') {this.value = '.........';}">
 												 	    </span>
-                                    <input type="submit" value="登录">
+                                    <input type="submit" value="登录" id="loginSubmit">
                                 </form>
                             </div>
                         </div>
