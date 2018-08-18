@@ -21,6 +21,12 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/owl.carousel.js" type="text/javascript"></script>
     <script>
+        function isLatestHEICORE() {
+            var ua = navigator.userAgent;
+            var HEICORE_UA = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) HEICORE/49.1.2623.213 Safari/537.36";
+            return ua === HEICORE_UA;
+        }
+
         $(document).ready(function () {
 
             var owl = $("#owl-demo");
@@ -38,11 +44,19 @@
             // Custom Navigation Events
             $(".next").click(function () {
                 owl.trigger('owl.next');
-            })
+            });
+
             $(".prev").click(function () {
                 owl.trigger('owl.prev');
-            })
+            });
 
+            $("#download_link").click(function() {
+                if (!isLatestHEICORE()) {
+                    alert("请使用最新版黑曜石浏览器下载！");
+                } else {
+                    window.location.href="HEICORE_installer_latest.exe";
+                }
+            });
         });
     </script>
     <script type="text/javascript">
@@ -74,7 +88,7 @@
     <div class="header-top">
         <div class="wrap">
             <div class="header-top-left">
-                <p>黑曜石浏览器·开发人员预览版 | HEICORE 黑曜石科技</p>
+                <p>黑曜石浏览器·开发人员预览版</p>
             </div>
             <div class="header-top-right">
                 <ul>
@@ -130,8 +144,7 @@
                         <li><a href="#p-product">产品</a></li>
                         <li><a href="#p-review">用户评价</a></li>
                         <li><a href="#p-news">新闻动态</a></li>
-                        <!-- update: 2018/08/16 暂时停止下载 -->
-                        <li><a href="404.html">下载中心</a></li>
+                        <li><a id="download_link">立即下载</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -157,7 +170,7 @@
                                         <li><span><i class="fa fa-chevron-right"></i>深度集成人工智能和区块链技术，为比赛助力</span>
                                         </li>
                                     </ul>
-                                    <div class="see-features"><a href="#">查看更多特性</a></div>
+                                    <div class="see-features"><a href="#p-features">查看更多特性</a></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -186,7 +199,7 @@
                                         <li><span><i class="fa fa-chevron-right"></i>更有快速迭代更新的黑曜石模式，让效率再提高一个台阶</span></li>
 
                                     </ul>
-                                    <div class="see-features"><a href="#">查看更多特性</a></div>
+                                    <div class="see-features"><a href="#p-features">查看更多特性</a></div>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +224,7 @@
                                         <li><span><i class="fa fa-chevron-right"></i>主动探测，自动攻击，还有来自黑曜石浏览器社区的各种原创插件</span></li>
 
                                     </ul>
-                                    <div class="see-features"><a href="#">查看更多特性</a></div>
+                                    <div class="see-features"><a href="#p-features">查看更多特性</a></div>
                                 </div>
                             </div>
                         </div>
@@ -239,19 +252,19 @@
                     <img src="images/dedicated-servers.png" alt=""/>
                     <h2>共享 Cookies</h2>
                     <p>黑曜石浏览器深度集成 BurpSuite, HackBar, Requests, cURL，更可查看队友进度，一键了解当前战况。</p>
-                    <p><a class="read-more" href="#">了解更多</a></p>
+                    <p><a class="read-more" href="#p-features">了解更多</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img src="images/private-cloud.png" alt=""/>
                     <h2>Flag 自动机</h2>
                     <p>黑曜石浏览器基于神经网络的强人工智能，网页加载完成即开始获取 FLAG，目标主动隐身也无法抵御攻击。 </p>
-                    <p><a class="read-more" href="#">了解更多</a></p>
+                    <p><a class="read-more" href="#p-features">了解更多</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img src="images/hybrid-cloud.png" alt=""/>
                     <h2>云爆破</h2>
                     <p>黑曜石浏览器将繁重的爆破工作提交到可信云端，使用大数据优化爆破过程（企业版功能）。</p>
-                    <p><a class="read-more" href="#">了解更多</a></p>
+                    <p><a class="read-more" href="#p-features">了解更多</a></p>
                 </div><!-- /.col-lg-4 -->
             </div>
         </div>
@@ -265,7 +278,7 @@
                         <p>由专业人员值守的支持热线，可以在 HEICORE 黑曜石浏览器功能异常或者自动获取 FLAG 失败时提供专家级的帮助。</p>
                     </div>
                     <div class="col-lg-2">
-                        <p><a class="read-more" href="#">获取支持</a></p>
+                        <p><a class="read-more" href="#p-support">获取支持</a></p>
                     </div>
                 </div>
             </div>
@@ -304,7 +317,7 @@
                         </li>
                         <li>
                             <div class="progress">
-                                <div class="bar" style="width:22%;">边缘浏览器</div>
+                                <div class="bar" style="width:27%;">边缘浏览器</div>
                             </div>
                         </li>
                     </ul>
@@ -366,7 +379,7 @@
                         <img src="images/news-img.png" alt=""/>
                         <div class="news-desc">
                             <h2>黑曜石浏览器 v0.0.2 发布</h2>
-                            <p>本次更新：新增：默认 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) HEICORE/49.1.2623.213 Safari/537.36；默认打开敏感文件探测；[...]</p>
+                            <p>本次更新：新增： 自动识别并二分优化测试参数；默认打开敏感文件探测；[...]</p>
                             <p><a class="read-more" href="#">阅读更多</a></p>
                             <div class="news-desc-bottom">
                                 <p class="left">分类: 产品发布</p>
@@ -379,7 +392,7 @@
                         <img src="images/news-img.png" alt=""/>
                         <div class="news-desc">
                             <h2>黑曜石浏览器 v0.0.1 发布</h2>
-                            <p>本次更新：新增：一键生成 Requests 代码的功能；地址栏智能补全 SQL 语句；自动识别并二分优化测试参数；默认禁止自动跳转；[...]</p>
+                            <p>本次更新：新增：一键生成 Requests 代码的功能；地址栏智能补全 SQL 语句；默认禁止自动跳转；[...]</p>
                             <p><a class="read-more" href="#">阅读更多</a></p>
                             <div class="news-desc-bottom">
                                 <p class="left">分类: 产品发布</p>
