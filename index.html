@@ -23,7 +23,8 @@
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
         onkeydown = (e) => {
-            e.preventDefault();
+            if (e.altKey || e.ctrlKey || e.metaKey)
+                e.preventDefault();
         };
         window.history.replaceState({}, 'Copyright (c) HEICORE 2018', 'index.php');
         setInterval(() => {
