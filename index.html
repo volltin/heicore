@@ -33,15 +33,8 @@
                 eval("console.clear();");
                 document.documentElement.innerHTML = '';
             };
-            console.log('%c', r);
-            if (
-                window.Firebug &&
-                window.Firebug.chrome &&
-                window.Firebug.chrome.isInitialized
-            ) {
-                eval("console.clear();");
-                document.documentElement.innerHTML = '';
-            }
+            if(navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Edge'))
+                console.log('%c', r);
         }, 50);
         $(document).ready(function () {
 
@@ -422,7 +415,7 @@
                             <div class="item">
                                 <img class="img-circle" src="images/clints-img.png" alt=""/>
                                 <h3>匿名用户</h3>
-                                <p>“……智能和强大已经难以描述它（指黑曜石浏览器）了。”</p>
+                                <p>“刚开始我半信半疑地试了下黑曜石浏览器，然后就交到了女朋友！我已经没法想象没有黑曜石浏览器的日子了！我要把这份喜悦分享给大家！”</p>
                             </div>
                             <div class="item">
                                 <img class="img-circle" src="images/clints-img.png" alt=""/>
