@@ -2,7 +2,7 @@
 
 source code of https://archive.fo/OqMaZ (~~heicore.com~~)
 
-Note for some humor-impaired people: 
+Notes for some humor-impaired people: 
 
 - It is simply a joke making fun of one of the well-known (or maybe little-known) browsers. The product does not exist on earth.
 
