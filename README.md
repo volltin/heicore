@@ -9,3 +9,7 @@ Notes for some humor-impaired people:
 - Do not believe it if someone gives you `HeicoreInstallerLatest.exe` and asks you to run it. It's a virus.
 
 - Ignore aforementioned notes if you already have one. Keep the secrets!
+
+## See also
+
+Write-ups of USTC Hackergame 2018: [heicore](https://github.com/ustclug/hackergame2018-writeups/blob/master/official/heicore/README.md)
