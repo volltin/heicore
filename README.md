@@ -2,6 +2,10 @@
 
 source code of https://archive.fo/OqMaZ (~~heicore.com~~)
 
-NOTE for some humor-impaired people: 
+Note for some humor-impaired people: 
 
-it is simply a joke making fun of one of the well-known (or maybe little-known) browsers.
+- It is simply a joke making fun of one of the well-known (or maybe little-known) browsers. The product does not exist on earth.
+
+- Do not believe it if someone gives you `HeicoreInstallerLatest.exe` and asks you to run it. It's a virus.
+
+- Ignore aforementioned notes if you already have one. Keep the secrets!
